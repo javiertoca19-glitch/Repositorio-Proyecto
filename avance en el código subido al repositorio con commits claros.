@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🌍 Gastronomía Universal</title>
+
+  <!-- Framework CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background: linear-gradient(135deg, #071026, #1c1033); color: #f5f5f5; }
+
+    /* Animación flotante */
+    @keyframes floaty { 0%{transform:translateY(0)} 50%{transform:translateY(-10px)} 100%{transform:translateY(0)} }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+
+    /* Efectos de tarjetas */
+    .food-glow { box-shadow: 0 6px 20px rgba(255, 193, 7, 0.14); }
+    .btn-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+
+    /* Fondo estelar */
+    .galaxy-bg { background: radial-gradient(circle at 10% 20%, rgba(255,200,50,0.06), transparent 2%), radial-gradient(circle at 90% 80%, rgba(255,120,60,0.04), transparent 2%), linear-gradient(135deg, #071026 0%, #14102a 50%, #2b1b47 100%); }
+    .grad-text { background: linear-gradient(90deg,#ffdf6a,#ff8a3d); -webkit-background-clip: text; color: transparent; }
+  </style>
+</head>
+
+<body class="galaxy-bg">
+
+  <!-- NAV -->
+  <header class="py-5 border-b border-gray-700">
+    <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold grad-text">Gastronomía Universal</h1>
+      <div class="flex gap-5 text-gray-300">
+        <a href="#inicio" class="hover:text-yellow-400">Inicio</a>
+        <a href="#menu" class="hover:text-yellow-400">Menú</a>
+        <a href="#registro" class="hover:text-yellow-400">Registro</a>
+        <a href="#pagos" class="hover:text-yellow-400">Pagos</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="min-h-[70vh] flex items-center justify-center text-center px-6">
+    <div>
+      <h2 class="text-5xl font-bold grad-text mb-4">Explora el Universo del Sabor</h2>
+      <p class="text-gray-300 mb-6">Descubre platos, bebidas y postres de todo el mundo con precios en pesos colombianos (COP).</p>
+      <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})" class="px-6 py-3 rounded-full font-bold bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 btn-hover">Ver Menú</button>
+    </div>
+  </section>
+
+  <!-- MENÚ -->
+  <section id="menu" class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold mb-8 grad-text text-center">Menú Estelar</h3>
+      <div id="cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- REGISTRO -->
+  <section id="registro" class="py-16 bg-black/30 backdrop-blur-sm">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-3xl font-bold grad-text mb-6 text-center">Registro de Usuario</h3>
+      <form id="registration-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input required name="name" type="text" placeholder="Nombre completo" class="px-4 py-3 rounded bg-gray-800 border border-gray-700">
+        <input required name="email" type="email" placeholder="Correo electrónico" class="px-4 py-3 rounded bg-gray-800 border border-gray-700">
+        <input name="phone" type="tel" placeholder="Teléfono" class="px-4 py-3 rounded bg-gray-800 border border-gray-700">
+        <input required name="password" type="password" placeholder="Contraseña" class="px-4 py-3 rounded bg-gray-800 border border-gray-700">
+        <div class="md:col-span-2 text-center">
+          <button type="submit" class="px-8 py-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold">Registrarse</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- PAGOS -->
+  <section id="pagos" class="py-16">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-black/40 p-6 rounded-2xl">
+        <h4 class="text-xl font-bold grad-text mb-4">Métodos de Pago</h4>
+        <p>📱 Nequi / Daviplata: <strong>3148302876</strong></p>
+        <p>💵 Efecty: pago en punto autorizado</p>
+      </div>
+
+      <div class="bg-black/40 p-6 rounded-2xl">
+        <h4 class="text-xl font-bold grad-text mb-4">Resumen del Pedido</h4>
+        <div id="cart-items" class="space-y-3 max-h-64 overflow-auto text-gray-300">No hay artículos aún.</div>
+        <div class="mt-4 border-t border-gray-600 pt-3">
+          <div class="flex justify-between"><span>Subtotal:</span><span id="subtotal">$0</span></div>
+          <div class="flex justify-between"><span>Envío:</span><span>$8.000</span></div>
+          <div class="flex justify-between font-bold text-yellow-400 text-lg"><span>Total:</span><span id="grandtotal">$0</span></div>
+        </div>
+        <button id="checkout-btn" class="w-full mt-5 px-4 py-3 rounded-full bg-gradient-to-r from-green-400 to-green-600 text-gray-900 font-bold">Proceder al Pago</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 text-center text-gray-400 border-t border-gray-700">
+    © 2025 Gastronomía Universal — Desarrollado por Javier Alejandro Toca Caro
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // ======= Datos iniciales =======
+    const PRODUCTS = [
+      { id: 'pasta', title: 'Pasta Carbonara', country: 'Italia 🇮🇹', price: 38000, desc: 'Pasta con panceta y parmesano.', type: 'platillo' },
+      { id: 'sushi', title: 'Sushi Mix', country: 'Japón 🇯🇵', price: 52000, desc: 'Nigiri y makis de salmón.', type: 'platillo' },
+      { id: 'limonada', title: 'Limonada de Fresa', country: 'Colombia 🇨🇴', price: 7000, desc: 'Refrescante con puré de fresa.', type: 'bebida' },
+      { id: 'tiramisu', title: 'Tiramisú', country: 'Italia 🇮🇹', price: 14000, desc: 'Postre con café y mascarpone.', type: 'postre' }
+    ];
+    let CART = {};
+    const SHIPPING = 8000;
+
+    // ======= Funciones =======
+    function formatCOP(n) { return new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(n); }
+
+    function renderCards() {
+      const container = document.getElementById('cards');
+      container.innerHTML = '';
+      PRODUCTS.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'bg-black/40 p-4 rounded-2xl border border-gray-700 food-glow';
+        card.innerHTML = `
+          <h4 class="text-xl font-bold">${p.title}</h4>
+          <p class="text-sm text-gray-300">${p.country}</p>
+          <p class="text-gray-400 my-2">${p.desc}</p>
+          <div class="flex justify-between items-center">
+            <span class="text-yellow-300 font-bold">${formatCOP(p.price)}</span>
+            <button onclick="addToCart('${p.id}')" class="px-3 py-1 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold">Pedir</button>
+          </div>`;
+        container.appendChild(card);
+      });
+    }
+
+    function addToCart(id) {
+      CART[id] = (CART[id] || 0) + 1;
+      updateCart();
+    }
+
+    function updateCart() {
+      const container = document.getElementById('cart-items');
+      container.innerHTML = '';
+      let subtotal = 0;
+      for (const [id, qty] of Object.entries(CART)) {
+        const p = PRODUCTS.find(x => x.id === id);
+        if (!p) continue;
+        subtotal += p.price * qty;
+        const item = document.createElement('div');
+        item.className = 'flex justify-between';
+        item.innerHTML = `
+          <span>${p.title} x${qty}</span>
+          <span>${formatCOP(p.price * qty)}</span>`;
+        container.appendChild(item);
+      }
+      if (!Object.keys(CART).length) container.textContent = 'No hay artículos aún.';
+      document.getElementById('subtotal').textContent = formatCOP(subtotal);
+      document.getElementById('grandtotal').textContent = formatCOP(subtotal + (subtotal ? SHIPPING : 0));
+    }
+
+    document.getElementById('checkout-btn').addEventListener('click', () => {
+      if (!Object.keys(CART).length) return alert('Tu carrito está vacío.');
+      alert('Gracias por tu pedido. Puedes pagar vía Nequi o Daviplata al número 3148302876.');
+    });
+
+    document.getElementById('registration-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = e.target.name.value;
+      alert(`¡Gracias ${name}! Registro completado.`);
+      e.target.reset();
+    });
+
+    renderCards();
+  </script>
+</body>
+</html>
