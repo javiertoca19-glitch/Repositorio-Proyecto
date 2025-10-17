@@ -1,0 +1,13 @@
+{
+  "nombre": "Martha Patricia",
+  "apellido": "Toca",
+  "correo": "martha.toca@example.com",
+  "telefono": "3105558899",
+  "direccion": "Carrera 12 #34-56, Tunja",
+  "saldo": 120000
+}
+
+{
+  "message": "✅ Cliente creado con éxito",
+  "id": 1
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nombre": "Martha Patricia",
+    "apellido": "Toca",
+    "correo": "martha.toca@example.com",
+    "telefono": "3105558899",
+    "direccion": "Carrera 12 #34-56, Tunja",
+    "tipo": "Cliente",
+    "saldo": 120000
+  }
+]

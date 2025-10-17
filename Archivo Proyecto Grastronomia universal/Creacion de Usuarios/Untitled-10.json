@@ -1,0 +1,9 @@
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "correo": "juanperez@gmail.com",
+  "telefono": "3101234567",
+  "direccion": "Carrera 5 #22-15, Sogamoso",
+  "tipo": "Cliente",
+  "saldo": 80000
+}

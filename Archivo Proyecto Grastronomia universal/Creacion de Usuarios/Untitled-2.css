@@ -1,0 +1,76 @@
+/* ===== Fondo galáctico con gradiente animado ===== */
+.galaxy-bg {
+  background: radial-gradient(circle at 10% 20%, rgba(255,200,50,0.06), transparent 2%),
+              radial-gradient(circle at 90% 80%, rgba(255,120,60,0.04), transparent 2%),
+              linear-gradient(135deg, #071026 0%, #14102a 50%, #2b1b47 100%);
+  background-size: 100% 100%;
+  min-height: 100%;
+}
+
+/* ===== Efectos en comida y botones ===== */
+.food-glow {
+  box-shadow: 0 6px 30px rgba(255,193,7,0.14);
+}
+
+.btn-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ===== Estrellas con animación ===== */
+.star {
+  position: absolute;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.15; transform: scale(0.9); }
+  50% { opacity: 0.95; transform: scale(1.2); }
+  100% { opacity: 0.15; transform: scale(0.9); }
+}
+
+/* ===== Fondo del modal ===== */
+.modal-backdrop {
+  background: rgba(0,0,0,0.6);
+}
+
+/* ===== Ajustes en pantallas pequeñas ===== */
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+/* ===== Texto con degradado ===== */
+.grad-text {
+  background: linear-gradient(90deg, #ffdf6a, #ff8a3d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===== Estilo para banderas ===== */
+.flag-container {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.flag {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+
+    
