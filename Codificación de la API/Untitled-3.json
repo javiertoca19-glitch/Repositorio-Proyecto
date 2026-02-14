@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pizza Italiana",
+    "precio": 20000
+  },
+  {
+    "id": 2,
+    "nombre": "Sushi Japonés",
+    "precio": 35000
+  }
+]

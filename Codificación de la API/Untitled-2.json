@@ -1,0 +1,10 @@
+{
+  "mensaje": "Pedido creado correctamente",
+  "pedido": {
+    "idPedido": 1,
+    "idUsuario": 1,
+    "productos": [...],
+    "total": 75000,
+    "estado": "Pendiente"
+  }
+}
