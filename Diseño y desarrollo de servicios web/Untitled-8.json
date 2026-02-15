@@ -1,0 +1,15 @@
+{
+  "mensaje": "Pedido creado correctamente",
+  "pedido": {
+    "id": 1,
+    "idUsuario": 1,
+    "productos": [
+      { "idProducto": 3, "cantidad": 2 },
+      { "idProducto": 5, "cantidad": 1 }
+    ],
+    "total": 75000,
+    "estado": "Pendiente"
+  }
+}
+
+
