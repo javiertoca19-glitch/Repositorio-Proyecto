@@ -1,0 +1,14 @@
+{
+  "name": "gastronomia-universal-api",
+  "version": "1.0.0",
+  "description": "API REST para gestión de pedidos - Gastronomía Universal",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Javier Alejandro Toca",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
