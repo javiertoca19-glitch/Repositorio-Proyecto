@@ -1,0 +1,11 @@
+{
+  "mensaje": "Pedido creado correctamente",
+  "pedido": {
+    "id": 1,
+    "usuarioId": 1,
+    "producto": "Pizza Italiana",
+    "cantidad": 2,
+    "direccion": "Calle 10 #15-20",
+    "estado": "Pendiente"
+  }
+}
