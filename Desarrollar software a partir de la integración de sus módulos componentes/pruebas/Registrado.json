@@ -1,0 +1,10 @@
+{
+  "mensaje": "Usuario registrado correctamente",
+  "usuario": {
+    "id": 1,
+    "nombre": "Juan Perez",
+    "correo": "juanperez@gmail.com",
+    "telefono": "3001234567",
+    "password": "123456"
+  }
+}

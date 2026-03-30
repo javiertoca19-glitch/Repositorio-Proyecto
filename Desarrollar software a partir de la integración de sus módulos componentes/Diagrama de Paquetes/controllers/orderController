@@ -1,0 +1,4 @@
+// Controlador de pedidos
+exports.createOrder = (req, res) => {
+    res.send("Pedido realizado con éxito");
+};
